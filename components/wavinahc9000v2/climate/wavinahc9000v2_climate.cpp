@@ -80,9 +80,11 @@ climate::ClimateTraits Wavinahc9000v2Climate::traits() {
     climate::ClimateMode::CLIMATE_MODE_AUTO,
   });
 
-  traits.set_supports_action(true);
+  traits.add_feature_flags(
+    climate::ClimateFeature::SUPPORTS_ACTION |
+    climate::ClimateFeature::SUPPORTS_CURRENT_TEMPERATURE
+  );
 
-  traits.set_supports_current_temperature(true);
   traits.set_visual_temperature_step(0.5);
   traits.set_visual_min_temperature(6);
   traits.set_visual_max_temperature(40);
